@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenWeather data render</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-cover bg-fixed"
+    style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./images/quyosh\ chiqish.jpg);
+    "
+  >
+    <header
+      class="py-8 bg-[#005986] bg-cover bg-fixed"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(./images/quyosh\ chiqish.jpg);
+      "
+    >
+      <div class="container m-auto">
+        <div class="flex items-center justify-between text-white">
+          <a class="text-4xl font-semibold" href="./index.html">
+            <p id="header-weather-icon"></p>
+            <span>Ob-Havo</span>
+          </a>
+          <form class="w-[400px] relative js-form">
+            <input
+              class="w-full py-2 pl-14 rounded-full bg-[#3c3f415b] text-white placeholder:text-white outline-blue-200 js-input"
+              type="text"
+              placeholder="Shaxar izlash"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute left-5 top-[13px]"
+            ></i>
+          </form>
+          <ul class="flex items-center gap-5">
+            <li
+              class="text-xl font-semibold border-b-2 border-[#fff0] hover:border-[#fff] transition-all"
+            >
+              <a href="./index.html">Bugun</a>
+            </li>
+            <li
+              class="text-xl font-semibold border-b-2 border-[#fff0] hover:border-[#fff] transition-all"
+            >
+              <a href="./wether.html">5 kunlik</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="text-white">
+      <section>
+        <div class="container m-auto">
+          <div class="pt-10 flex items-center justify-evenly js-countrys-more">
+            <ul
+              class="hover:translate-y-[-10px] transition-all js-render js-uzb"
+              data-country="UZB"
+            ></ul>
+            <ul
+              class="hover:translate-y-[-10px] transition-all js-render js-gb"
+              data-country="GB"
+            ></ul>
+            <ul
+              class="hover:translate-y-[-10px] transition-all js-render js-us"
+              data-country="US"
+            ></ul>
+            <ul
+              class="hover:translate-y-[-10px] transition-all js-render js-kz"
+              data-country="KZ"
+            ></ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container m-auto">
+          <div class="mt-10">
+            <ul class="w-[800px] m-auto rounded-xl js-weather-description"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template class="js-template">
+      <li
+        class="w-[300px] flex items-center justify-between px-5 py-6 rounded-xl bg-[#0000001b] hover:cursor-pointer hover:bg-[#0000001e] transition-all"
+      >
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-xl js-country"></h3>
+            <img class="w-[30px] js-icon" src="" alt="icon" />
+          </div>
+          <h2 class="text-2xl font-semibold py-4 js-name"></h2>
+          <p class="text-xl js-weather"></p>
+        </div>
+        <div class="text-center">
+          <div class="js-weather-icon-container animate-pulse"></div>
+          <span class="block text-3xl py-4 js-temp"></span>
+          <button
+            class="text-xl border-b-2 rounded-xl px-2 hover:scale-105 ease-in duration-200 js-more-btn"
+          >
+            More info
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <template class="js-weather-template">
+      <li class="pb-4 rounded-xl bg-[#0c0d0d32]">
+        <p class="py-2 text-3xl text-center bg-[#1b1d1d4c] rounded-t-xl">
+          <span class="js-country-name"></span>
+          <time class="js-time" id="time"></time>
+        </p>
+
+        <div class="mt-10 flex gap-16 justify-center">
+          <div>
+            <span class="text-2xl js-all-time"></span>
+            <h2 class="text-8xl font-semibold js-temp"></h2>
+            <p class="text-xl text-[#ffffffc3] js-country-title"></p>
+          </div>
+
+          <div>
+            <h2 class="mb-2 text-4xl">Description!</h2>
+            <div class="flex items-center gap-3">
+              <div class="animate-pulse js-weather-icon"></div>
+              <div class="text-md">
+                <span class="block">sunrise: 03:57</span>
+                <span>sunset: 19:17</span>
+              </div>
+            </div>
+            <h3 class="text-2xl js-clear">clear sky</h3>
+          </div>
+
+          <div class="text-xl">
+            <h2 class="mb-2 text-4xl">More Details:</h2>
+            <p class="text-[#ffffffbb]">
+              Wind speed: <span class="text-white js-ms"></span>
+            </p>
+            <p class="text-[#ffffffbb]">
+              Air humidity: <span class="text-white js-humidity"></span>
+            </p>
+            <p class="text-[#ffffffbb]">
+              pressure: <span class="text-white js-pressure"></span>
+            </p>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

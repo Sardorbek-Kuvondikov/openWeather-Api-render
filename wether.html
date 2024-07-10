@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 kunlik ob havo</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-cover bg-fixed"
+    style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./images/quyosh\ chiqish.jpg);
+    "
+  >
+    <header
+      class="py-8 bg-[#005986] sticky left-0 top-0 bg-cover bg-fixed"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(./images/quyosh\ chiqish.jpg);
+      "
+    >
+      <div class="container m-auto">
+        <div class="flex items-center justify-between text-white">
+          <a class="text-4xl font-semibold" href="./index.html">
+            <i class="fa-solid fa-sun text-yellow-400"></i>
+            <span>Ob-Havo</span>
+          </a>
+          <form class="w-[400px] relative js-form">
+            <input
+              class="w-full py-2 pl-14 rounded-full bg-[#40484d88] text-white placeholder:text-white outline-blue-200 js-input"
+              type="text"
+              placeholder="Shaxar izlash"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute left-5 top-[13px]"
+            ></i>
+          </form>
+          <ul class="flex items-center gap-5">
+            <li
+              class="text-xl font-semibold border-b-2 border-[#fff0] hover:border-[#fff] transition-all"
+            >
+              <a href="./index.html">Bugun</a>
+            </li>
+            <li
+              class="text-xl font-semibold border-b-2 border-[#fff0] hover:border-[#fff] transition-all"
+            >
+              <a href="./wether.html">5 kunlik</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container mt-5">
+          <h1 class="text-[#ffffffa5] text-4xl font-semibold text-center mb-8">
+            <span class="text-[#ffffffed] js-country">Samarqand</span> 3 soatlik
+            va 5 kunlik ob havo
+          </h1>
+          <ul class="text-white js-text"></ul>
+        </div>
+      </section>
+    </main>
+
+    <template class="js-template">
+      <li
+        class="w-[850px] m-auto p-2 px-4 flex items-center justify-between rounded-lg border-x border-t hover:cursor-pointer"
+      >
+        <div class="flex items-center gap-14">
+          <div class="flex items-center gap-2">
+            <h2 class="w-[70px] js-date"></h2>
+            <h2 class="js-time"></h2>
+          </div>
+          <span class="ont-semibold text-2xl js-degree"></span>
+          <div class="flex items-center gap-3">
+            <div class="js-weather-icons">
+              <!-- <i class="fa-solid fa-cloud text-3xl"></i> -->
+            </div>
+            <p class="text-lg js-sky"></p>
+          </div>
+        </div>
+        <div class="flex items-center gap-8">
+          <div>
+            <i class="fa-solid fa-wind text-purple-300"></i>
+            <span class="pl-1 js-win-speed"></span>
+          </div>
+          <div>
+            <i class="fa-solid fa-droplet text-blue-300"></i>
+            <span class="pl-1 js-humidity"></span>
+          </div>
+          <i class="fa-solid fa-arrow-rotate-right"></i>
+        </div>
+      </li>
+    </template>
+
+    <script src="./js/weather.js"></script>
+  </body>
+</html>
